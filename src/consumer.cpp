@@ -1,9 +1,10 @@
 /*!
-*   /details Consumer in the producer/consumer problem, implemented with threading and shared buffer
+*   \details Consumer in the producer/consumer problem, implemented with threading and shared buffer
 *   
 *
-*   /author  Elliott Hager
-*   /date  10/24/2023
+*   \file consumer.cpp
+*   \author  Elliott Hager
+*   \date  10/24/2023
 *   
 *
 **/
@@ -31,6 +32,8 @@ int main() {
 
     return 0;
 }
+
+
 
 
 /**

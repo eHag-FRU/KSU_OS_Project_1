@@ -1,17 +1,22 @@
-/*
-*   Producer in the producer/consumer problem,
-*   implemented with threading and shared buffer
+/*!
+*   \details  Producer in the producer/consumer problem, implemented with threading and shared buffer
 *
-*
-*   Author: Elliott Hager
-*   Date: 10/24/2023
+*   \file producer.cpp
+*   \author Elliott Hager
+*   \date 10/24/2023
 *   
 *
 **/
 
 
-#include "producer.hpp"
+#include "../include/producer.hpp"
 
+
+/**
+ * @brief Function to drive producer thread
+ * 
+ * @return int 
+ */
 int main() {
 
     //Make the thread object
@@ -28,6 +33,14 @@ int main() {
 }
 
 
+
+
+/**
+ * @brief Function for thread to run as a producer into the shared memory buffer with semaphores
+ * 
+ * @param arg 
+ * @return void* 
+ */
 void* producer(void* arg) {
    while(true) {
     std::cout << "In the producer" << std::endl;

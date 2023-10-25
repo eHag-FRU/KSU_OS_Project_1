@@ -1,0 +1,64 @@
+\hypertarget{producer_8cpp}{}\doxysection{src/producer.cpp File Reference}
+\label{producer_8cpp}\index{src/producer.cpp@{src/producer.cpp}}
+{\ttfamily \#include \char`\"{}../include/producer.\+hpp\char`\"{}}\newline
+Include dependency graph for producer.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{producer_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{producer_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Function to drive producer thread. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{producer_8cpp_ab10e75e0e8afd435834a7fa8b38e2a96}{producer}} (void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Function for thread to run as a producer into the shared memory buffer with semaphores. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Producer in the producer/consumer problem, implemented with threading and shared buffer
+
+\begin{DoxyAuthor}{Author}
+Elliott Hager 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+10/24/2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{producer_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{producer_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{producer.cpp@{producer.cpp}!main@{main}}
+\index{main@{main}!producer.cpp@{producer.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to drive producer thread. 
+
+Main function, driving the consumer.
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{producer_8cpp_ab10e75e0e8afd435834a7fa8b38e2a96}\label{producer_8cpp_ab10e75e0e8afd435834a7fa8b38e2a96}} 
+\index{producer.cpp@{producer.cpp}!producer@{producer}}
+\index{producer@{producer}!producer.cpp@{producer.cpp}}
+\doxysubsubsection{\texorpdfstring{producer()}{producer()}}
+{\footnotesize\ttfamily void$\ast$ producer (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+Function for thread to run as a producer into the shared memory buffer with semaphores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$ 
+\end{DoxyReturn}

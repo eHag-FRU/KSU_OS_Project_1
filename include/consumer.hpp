@@ -1,13 +1,12 @@
-/*
-*   Consumer in the producer/consumer problem,
-*   implemented with threading and shared buffer
+/*!
+*   \details Consumer in the producer/consumer problem, implemented with threading and shared buffer 
 *
-*
-*   Author: Elliott Hager
-*   Date: 10/24/2023
+*   \file consumer.hpp
+*   \author  Elliott Hager
+*   \date 10/24/2023
 *   
 *
-**/
+*/
 
 #ifndef CONSUMER_HPP
 #define CONSUMER_HPP

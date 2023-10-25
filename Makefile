@@ -11,16 +11,13 @@
 
 
 consumer: ./src/consumer.cpp
-	g++ "./src/consumer.cpp" -pthread -lrt -o consumer
+	g++ "./src/consumer.cpp" -pthread -lrt -o ./out/consumer
 
 
 producer: producer.cpp
-	g++ "./include/producer.cpp" -pthread -lrt -o producer
+	g++ "./include/producer.cpp" -pthread -lrt -o ./out/producer
 
 
 clean:
-	rm -f *.o
-	rm -f *.out
-	rm -f *.gch
-	rm -f consumer
-	rm -f producer
+	rm -f ./out/consumer
+	rm -f ./out/producer

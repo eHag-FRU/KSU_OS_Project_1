@@ -1,0 +1,67 @@
+\label{index_md_README}%
+\Hypertarget{index_md_README}%
+ ~\newline
+\hypertarget{index_autotoc_md1}{}\doxysubsection{Author\+: Elliott Hager}\label{index_autotoc_md1}
+\hypertarget{index_autotoc_md2}{}\doxysubsection{Fall 2023 Semester}\label{index_autotoc_md2}
+\hypertarget{index_autotoc_md3}{}\doxysubsection{CS-\/33211\+: Operating Systems}\label{index_autotoc_md3}
+\hypertarget{index_autotoc_md4}{}\doxysubsection{Dr. Qiang Guan}\label{index_autotoc_md4}
+\hypertarget{index_autotoc_md5}{}\doxysubsection{Kent State University}\label{index_autotoc_md5}
+~\newline
+~\newline
+\hypertarget{index_autotoc_md6}{}\doxysubsubsection{Description (\+Provided from the assignment instructions)}\label{index_autotoc_md6}
+The producer generates items and puts items onto the table. The consumer will pick up items. The table can only hold two items at the same time. When the table is complete, the producer will wait. When there are no items, the consumer will wait. We use semaphores to synchronize producer and consumer. Mutual exclusion should be considered. We use threads in the producer program and consumer program. Shared memory is used for the “table”.
+
+~\newline
+~\newline
+\hypertarget{index_autotoc_md7}{}\doxysubsection{Implementation}\label{index_autotoc_md7}
+Both the producer and consumer have their own processes, with a thread in each created and pointed to a function of the same name (i.\+e. consumer and producer respectively). With each thread running their own functions, a shared memory buffer with a capactiy to hold two items is shared between the producer and consumer. To help prevent deadlock and other data hazards when it comes to a shared buffer, a semaphore is used to indicate use of the bufffer. The number \textquotesingle{}1\textquotesingle{} indicates the buffer is currently in use, while the number \textquotesingle{}0\textquotesingle{} indicates the buffer is available for use.\+s
+
+~\newline
+~\newline
+\hypertarget{index_autotoc_md8}{}\doxysubsection{Compilation}\label{index_autotoc_md8}
+Both the producer and consumer are seprate files and meant to be seprate processes. There are three options within the make file. The first two being consumer and producer respectively. These compiler the producer and consumer. The last option is clean, which cleans any object (.o) files as well as the compiled program files to be executed.
+
+Running the consumer and/or producer seprately will not be of benifit as each relies on each other to run concurrently.
+
+~\newline
+\hypertarget{index_autotoc_md9}{}\doxysubsubsection{Consumer\+:}\label{index_autotoc_md9}
+The following make command will compile the consumer files for execution 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make consumer}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md10}{}\doxysubsection{Producer\+:}\label{index_autotoc_md10}
+The following make command will compile the producer files for execution 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make producer}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md11}{}\doxysubsection{Clean\+:}\label{index_autotoc_md11}
+The following make command will remove the compiled and executable program files 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make clean}
+
+\end{DoxyCode}
+
+
+~\newline
+~\newline
+\hypertarget{index_autotoc_md12}{}\doxysubsection{Run Instructions\+:}\label{index_autotoc_md12}
+To run both of the producer and consumer at the same time, for Linux and Unix systems, the following command is used 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./consumer \& ./producer}
+
+\end{DoxyCode}
+
+
+~\newline
+~\newline
+\hypertarget{index_autotoc_md13}{}\doxysubsection{Libraries \& Tech Stack}\label{index_autotoc_md13}
+
+\begin{DoxyItemize}
+\item C++
+\item Make
+\item G++
+\item PThread Library
+\item Shared\+Mem 3 Library 
+\end{DoxyItemize}

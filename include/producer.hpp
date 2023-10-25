@@ -1,10 +1,10 @@
-/*
-*   Producer in the producer/consumer problem,
-*   implemented with threading and shared buffer
+/*!
+*   \details Producer in the producer/consumer problem, implemented with threading and shared buffer  
 *
 *
-*   Author: Elliott Hager
-*   Date: 10/24/2023
+*   \file producer.hpp
+*   \author Elliott Hager
+*   \date 10/24/2023
 *   
 *
 **/
