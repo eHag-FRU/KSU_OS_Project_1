@@ -15,6 +15,7 @@
     #include <pthread.h>
     #include <iostream>
     #include <unistd.h>
+    #include <semaphore.h>
 
 
     int main();

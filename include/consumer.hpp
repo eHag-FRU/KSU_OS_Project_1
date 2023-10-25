@@ -13,6 +13,7 @@
     #include <pthread.h>
     #include <unistd.h>
     #include <iostream>
+    #include <semaphore.h>
 
     int main();
 

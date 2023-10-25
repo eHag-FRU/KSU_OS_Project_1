@@ -14,8 +14,8 @@ consumer: ./src/consumer.cpp
 	g++ "./src/consumer.cpp" -pthread -lrt -o ./out/consumer
 
 
-producer: producer.cpp
-	g++ "./include/producer.cpp" -pthread -lrt -o ./out/producer
+producer: ./src/producer.cpp
+	g++ "./src/producer.cpp" -pthread -lrt -o ./out/producer
 
 
 clean:
