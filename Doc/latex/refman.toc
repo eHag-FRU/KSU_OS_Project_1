@@ -1,0 +1,15 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Programming Assignment 1 -\/ Producer \& Consumer Problem}{1}{chapter.1}%
+\contentsline {subsection}{\numberline {1.0.1}Author\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}: Elliott Hager}{1}{subsection.1.0.1}%
+\contentsline {subsection}{\numberline {1.0.2}Fall 2023 Semester}{1}{subsection.1.0.2}%
+\contentsline {subsection}{\numberline {1.0.3}CS-\/33211\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}: Operating Systems}{1}{subsection.1.0.3}%
+\contentsline {subsection}{\numberline {1.0.4}Dr. Qiang Guan}{1}{subsection.1.0.4}%
+\contentsline {subsection}{\numberline {1.0.5}Kent State University}{1}{subsection.1.0.5}%
+\contentsline {subsubsection}{\numberline {1.0.5.1}Description (\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Provided from the assignment instructions)}{1}{subsubsection.1.0.5.1}%
+\contentsline {subsection}{\numberline {1.0.6}Implementation}{2}{subsection.1.0.6}%
+\contentsline {subsection}{\numberline {1.0.7}Compilation}{2}{subsection.1.0.7}%
+\contentsline {subsubsection}{\numberline {1.0.7.1}Consumer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{2}{subsubsection.1.0.7.1}%
+\contentsline {subsection}{\numberline {1.0.8}Producer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{2}{subsection.1.0.8}%
+\contentsline {subsection}{\numberline {1.0.9}Clean\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{2}{subsection.1.0.9}%
+\contentsline {subsection}{\numberline {1.0.10}Run Instructions\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{2}{subsection.1.0.10}%
+\contentsline {subsection}{\numberline {1.0.11}Libraries \& Tech Stack}{3}{subsection.1.0.11}%

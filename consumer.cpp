@@ -1,10 +1,9 @@
-/*
-*   Consumer in the producer/consumer problem,
-*   implemented with threading and shared buffer
+/*!
+*   /details Consumer in the producer/consumer problem, implemented with threading and shared buffer
+*   
 *
-*
-*   Author: Elliott Hager
-*   Date: 10/24/2023
+*   /author  Elliott Hager
+*   /date  10/24/2023
 *   
 *
 **/
@@ -14,6 +13,11 @@
 
 #include "consumer.hpp"
 
+/**
+ * @brief Main function, driving the consumer
+ * 
+ * @return int 
+ */
 int main() {
 //Make the thread object
     pthread_t consumerThread;
@@ -29,7 +33,12 @@ int main() {
 }
 
 
-
+/**
+ * @brief Function for consumer thread to use to process and "consume" the data in the shared memory
+ * 
+ * @param arg
+ * @return void* 
+ */
 void* consumer(void* arg) {
     while(true) {
         sleep(1);
