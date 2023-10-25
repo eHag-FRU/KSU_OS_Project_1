@@ -10,12 +10,12 @@
 ####################################################
 
 
-consumer: consumer.cpp
-	g++ consumer.cpp -pthread -lrt -o consumer
+consumer: ./src/consumer.cpp
+	g++ "./src/consumer.cpp" -pthread -lrt -o consumer
 
 
 producer: producer.cpp
-	g++ producer.cpp -pthread -lrt -o producer
+	g++ "./include/producer.cpp" -pthread -lrt -o producer
 
 
 clean:
