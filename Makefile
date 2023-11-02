@@ -18,6 +18,12 @@ producer: ./src/producer.cpp
 	g++ "./src/producer.cpp" -pthread -lrt -o ./out/producer
 
 
+run:
+	
+	make producer
+	make consumer
+	./out/producer & ./out/consumer
+
 clean:
 	rm -f ./out/consumer
 	rm -f ./out/producer

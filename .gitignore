@@ -1,3 +1,7 @@
-sharedmemory.cpp
-./.vscode
-DoxyFile
+#Ignored files
+Doxyfile
+
+
+
+#Ignored directories
+/.vscode
