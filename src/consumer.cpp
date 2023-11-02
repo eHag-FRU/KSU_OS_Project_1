@@ -34,52 +34,55 @@
 // }
 
 
-void* consumer(void* arg) {
-    //Make the struct
-    struct sharedMem* conMem;
-
-    //Open the "file" that will be for shared memory
-    int fd = shm_open("shmfile", O_CREAT | O_EXCL | O_RDWR, 0600);
-
-    //Now we need to map to THIS program's LOCAL address space
-    conMem = static_cast<sharedMem*>(mmap(NULL, sizeof(*conMem), PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0));
-    
-
-     for (int i = 0; i <= 19; ++i) {
-        sem_wait(&(conMem->full));
-        sem_wait(&(conMem->mutex));
-
-    //     int con_item;
-
-    //     conMem->out += conMem->out % TABLE_SIZE;
+int main(int argc, char *argv[]) {
+    //Vars
+    int fd;
+    char * shmpath;
+    struct sharedMem *consMem;
 
 
-    //     sem_post(&(conMem->mutex));
-    //     sem_post(&(conMem->empty));
 
-    //     sleep(rand());
+    //Grab the shared mem path from command
+    shmpath = argv[1];
+
+
+    //open mem
+    fd = shm_open(shmpath, O_RDWR, 0);
+
+
+
+    //Truncate it to the size of the struct, ensures extra is not used
+    ftruncate(fd, sizeof(*consMem));
+
+    consMem = static_cast<sharedMem*>(mmap(NULL, sizeof(*consMem), PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0));
+
+    for (int i = 4; i >= 0; --i) {
+        sem_wait(&(consMem->full));
+        sem_wait(&(consMem->mutex));
+
+
+        int con_item;
+        con_item = consMem->table[consMem->out];
+        std::cout << "Consumed: " <<  con_item << std::endl;
+        
+
+        std::cout << "Out value BEFORE: " << consMem->out << std::endl;
+
+        consMem->out += consMem->out % TABLE_SIZE;
+
+        std::cout << "Out value AFTER: " << consMem->out << std::endl;
+
+
+        sem_post(&(consMem->mutex));
+        sem_post(&(consMem->empty));
+
+        sleep(rand()%10);
     }
 
 
     //Detatch mem
-    shm_unlink("shmfile");
+    shm_unlink(shmpath);
 
-
-    return NULL;
-
-}
-
-
-
-
-
-int main() {
-    pthread_t consumerThread; //Makes consumer thread
-
-    pthread_create(&consumerThread, NULL, consumer, NULL);  //Assigns the consumer function to the thread
-
-
-    pthread_join(consumerThread, NULL); //Joins the thread
 
     return 0;
 

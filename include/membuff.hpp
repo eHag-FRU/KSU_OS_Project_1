@@ -23,8 +23,8 @@
 
         int table[TABLE_SIZE];
 
-        int in = 0;
-        int out = 0;
+        int in;
+        int out;
 
         sem_t mutex;
         sem_t empty;

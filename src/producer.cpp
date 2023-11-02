@@ -12,7 +12,6 @@
 
 
 
-
 //pseudocode for producer
 
 // Main function of Producer {
@@ -40,52 +39,38 @@
 //     Detach shared memory
 // }
 
+int main(int argc, char *argv[]) {
 
-void* producer(void* arg) {
-    //Make the struct
-    struct sharedMem* prodMem;
-
-    std::cout << "Made struct" << std::endl;
-
-    //Open the "file" that will be for shared memory
-    int fd = shm_open("shmfile", O_CREAT | O_EXCL | O_RDWR, 0600);
-
-    ftruncate(fd, sizeof(struct sharedMem));
+    //Vars
+    int fd;
+    char * shmpath;
+    struct sharedMem *prodMem;
 
 
-    std::cout << "SHM_OPEN" << std::endl;
-
-    //Now we need to map to THIS program's LOCAL address space
-    prodMem = static_cast<sharedMem*>(mmap(NULL, sizeof(*prodMem), PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0));
+    //Grab the shared mem path from command
+    shmpath = argv[1];
 
 
-
-    std::cout << "MAPPED WITH MMAP" << std::endl;
-
-    //Mutex is set to 1 as it is ready to use
-    sem_init(&prodMem->mutex, 1, 1);
-
-    std::cout << "Init mutex" << std::endl;
+    //open mem
+    fd = shm_open(shmpath, O_CREAT | O_EXCL | O_RDWR, 0600);
 
 
-    //Set full
-    sem_init(&prodMem->full, 1, 0);
+    //Truncate it to the size of the struct, ensures extra is not used
+    ftruncate(fd, sizeof(*prodMem));
 
-    std::cout << "Init full" << std::endl;
-
-    //Set empty
-    sem_init(&prodMem->empty, 1, TABLE_SIZE);
-    std::cout << "Init empty" << std::endl;
-
-    //prodMem->in = 0;
-    //prodMem->out = 0;
-    //std::cout << "Init in and out" << std::endl;
-
-   //std::cout << "In: " << (prodMem->in) << std::endl;
+    prodMem = static_cast<sharedMem*>(mmap(NULL, sizeof(*prodMem), PROT_READ | PROT_WRITE,MAP_SHARED, fd, 0));
 
 
-    for (int i = 0; i <= 19; ++i) {
+    //Init the structs
+    sem_init(&(prodMem->mutex), 1,1);
+    
+    sem_init(&(prodMem->full), 1,0);
+    
+    sem_init(&(prodMem->empty), 1, TABLE_SIZE);
 
+    prodMem->in, prodMem->out = 0;
+
+    for(int i = 4; i >= 0; --i) {
         //Check if buffer is empty and if the mutex is NOT in use
         //If either one is NOT ready, then wait
         sem_wait(&prodMem->empty);
@@ -93,40 +78,28 @@ void* producer(void* arg) {
 
         int prod_val = rand();
 
-        std::cout << prod_val << std::endl;
+        std::cout << "Produced: " << prod_val << std::endl;
 
-        // prodMem->table[prodMem->in] = prod_val;
+        prodMem->table[prodMem->in] = prod_val;
 
 
-        // //Need to mod to ensure only 0 to TABLE_SIZE are used again and again
-        // prodMem->in += prodMem->in % TABLE_SIZE;
+        std::cout << "In value BEFORE: " << prodMem->in << std::endl;
 
-        // puts("Produced: " + prod_val);
+        //Need to mod to ensure only 0 to TABLE_SIZE are used again and again
+        prodMem->in += prodMem->in % TABLE_SIZE;
 
-        // //Release the mutex and mark the buffer as full
-        // sem_post(&prodMem->mutex);
-        // sem_post(&prodMem->full);
+        std::cout << "In value AFTER: " << prodMem->in << std::endl;
 
-        // sleep(rand());
+
+        //Release the mutex and mark the buffer as full
+        sem_post(&prodMem->mutex);
+        sem_post(&prodMem->full);
+
+        sleep(rand()%10);
     }
-    
-    //Unlink the memory
-    shm_unlink("shmfile");
 
-    return NULL;
-}
+    shm_unlink(shmpath);
 
-
-int main() {
-
-    //Creation of the thread to make the program run on threads
-    pthread_t prod_thread;
-
-    pthread_create(&prod_thread, NULL, producer, NULL);
-
-
-    pthread_join(prod_thread,NULL);
-    
 
     return 0;
 }
