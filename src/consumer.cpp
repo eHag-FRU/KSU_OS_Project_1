@@ -11,29 +11,6 @@
 #include "../include/membuff.hpp"
 
 
-//pseudocode for consumer
-
-// Main function of Consumer {
-//     Initialize shared memory segment with key "shmfile" and attach to SharedData
-
-//     For i from 0 to 19 {
-//         Wait on semaphore full
-//         Wait on semaphore mutex
-
-//         Remove item from table at index "out"
-//         Print "Consumed: " + item
-//         Increment out modulo TABLE_SIZE
-
-//         Signal semaphore mutex
-//         Signal semaphore empty
-
-//         Sleep for a random time // simulate variable time for consuming
-//     }
-
-//     Detach shared memory
-// }
-
-
 int main(int argc, char *argv[]) {
     //Vars
     int fd;
@@ -66,11 +43,7 @@ int main(int argc, char *argv[]) {
         std::cout << "Consumed: " <<  con_item << std::endl;
         
 
-        std::cout << "Out value BEFORE: " << consMem->out << std::endl;
-
-        consMem->out += consMem->out % TABLE_SIZE;
-
-        std::cout << "Out value AFTER: " << consMem->out << std::endl;
+        consMem->out = (consMem->out + 1) % TABLE_SIZE;
 
 
         sem_post(&(consMem->mutex));

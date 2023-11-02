@@ -11,34 +11,6 @@
 
 
 
-
-//pseudocode for producer
-
-// Main function of Producer {
-//     Initialize shared memory segment with key "shmfile" and attach to SharedData
-//     Initialize semaphore mutex to 1
-//     Initialize semaphore empty to TABLE_SIZE
-//     Initialize semaphore full to 0
-//     Initialize in and out to 0
-
-//     For i from 0 to 19 {
-//         Wait on semaphore empty
-//         Wait on semaphore mutex
-
-//         Produce an item with value i
-//         Place item in table at index "in"
-//         Print "Produced: " + i
-//         Increment in modulo TABLE_SIZE
-
-//         Signal semaphore mutex
-//         Signal semaphore full
-
-//         Sleep for a random time // simulate variable time for producing
-//     }
-
-//     Detach shared memory
-// }
-
 int main(int argc, char *argv[]) {
 
     //Vars
@@ -83,12 +55,8 @@ int main(int argc, char *argv[]) {
         prodMem->table[prodMem->in] = prod_val;
 
 
-        std::cout << "In value BEFORE: " << prodMem->in << std::endl;
-
         //Need to mod to ensure only 0 to TABLE_SIZE are used again and again
-        prodMem->in += prodMem->in % TABLE_SIZE;
-
-        std::cout << "In value AFTER: " << prodMem->in << std::endl;
+        prodMem->in = (prodMem->in + 1) % TABLE_SIZE;
 
 
         //Release the mutex and mark the buffer as full
