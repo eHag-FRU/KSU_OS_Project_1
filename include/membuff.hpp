@@ -1,24 +1,27 @@
-//Define structure SharedData {
-    //Array table[0..TABLE_SIZE-1]
-    //Integer in = 0
-    //Integer out = 0
-    //Semaphore mutex = 1
-    //Semaphore empty = TABLE_SIZE
-    //Semaphore full = 0
-//}
+/**
+ * @file membuff.hpp
+ * @author Elliott Hager
+ * @brief The shared memory buffer structure for the producer/consumer probelm
+ * @date 2023-11-05
+ * 
+ */
 
 #ifndef MEMBUFF_HPP
 #define  MEMBUFF_HPP
-    #include <stdio.h>
     #include <stdlib.h>
-    #include <unistd.h>
-    #include <pthread.h>
     #include <sys/shm.h>
     #include <sys/ipc.h>
     #include <semaphore.h>
 
+    /**
+     * @brief The size of the buffer
+     */
     #define TABLE_SIZE 2
 
+
+    /**
+     * @brief The shared memory buffer with semaphores
+     */
     struct sharedMem {
 
         int table[TABLE_SIZE];

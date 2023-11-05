@@ -1,16 +1,26 @@
 \hypertarget{consumer_8hpp}{}\doxysection{include/consumer.hpp File Reference}
 \label{consumer_8hpp}\index{include/consumer.hpp@{include/consumer.hpp}}
-{\ttfamily \#include $<$pthread.\+h$>$}\newline
+
+
+The consumer header for the producer/consumer problem.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
-Include dependency graph for consumer.\+hpp\+:\nopagebreak
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/mman.\+h$>$}\newline
+Include dependency graph for consumer.\+hpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=296pt]{consumer_8hpp__incl}
+\includegraphics[width=350pt]{consumer_8hpp__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,57 +30,17 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{consumer_8hpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
-\begin{DoxyCompactList}\small\item\em Main function, driving the consumer. \end{DoxyCompactList}\item 
-void $\ast$ \mbox{\hyperlink{consumer_8hpp_aa9ad1d4db3b695d7f286ae63323df1e9}{consumer}} (void $\ast$)
-\begin{DoxyCompactList}\small\item\em Function for consumer thread to use to process and \char`\"{}consume\char`\"{} the data in the shared memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{consumer_8hpp_ad5c6b41eba5f719bb7801c662b4809cf}\label{consumer_8hpp_ad5c6b41eba5f719bb7801c662b4809cf}} 
+int {\bfseries main} (int, char $\ast$)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Consumer in the producer/consumer problem, implemented with threading and shared buffer
+The consumer header for the producer/consumer problem. 
 
 \begin{DoxyAuthor}{Author}
 Elliott Hager 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Date}
-10/24/2023 
+2023-\/11-\/05 
 \end{DoxyDate}
-
-
-\doxysubsection{Function Documentation}
-\mbox{\Hypertarget{consumer_8hpp_aa9ad1d4db3b695d7f286ae63323df1e9}\label{consumer_8hpp_aa9ad1d4db3b695d7f286ae63323df1e9}} 
-\index{consumer.hpp@{consumer.hpp}!consumer@{consumer}}
-\index{consumer@{consumer}!consumer.hpp@{consumer.hpp}}
-\doxysubsubsection{\texorpdfstring{consumer()}{consumer()}}
-{\footnotesize\ttfamily void$\ast$ consumer (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
-
-
-
-Function for consumer thread to use to process and \char`\"{}consume\char`\"{} the data in the shared memory. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em arg} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-void$\ast$ 
-\end{DoxyReturn}
-\mbox{\Hypertarget{consumer_8hpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{consumer_8hpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
-\index{consumer.hpp@{consumer.hpp}!main@{main}}
-\index{main@{main}!consumer.hpp@{consumer.hpp}}
-\doxysubsubsection{\texorpdfstring{main()}{main()}}
-{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Main function, driving the consumer. 
-
-\begin{DoxyReturn}{Returns}
-int
-\end{DoxyReturn}
-Main function, driving the consumer.
-
-\begin{DoxyReturn}{Returns}
-int 
-\end{DoxyReturn}

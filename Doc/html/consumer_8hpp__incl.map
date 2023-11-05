@@ -1,6 +1,9 @@
 <map id="include/consumer.hpp" name="include/consumer.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="69,5,233,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,80,89,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="114,80,189,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="213,80,293,107"/>
+<area shape="rect" id="node1" title="The consumer header for the producer/consumer problem." alt="" coords="209,5,373,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,72,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="96,80,171,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="195,80,279,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="304,80,384,107"/>
+<area shape="rect" id="node6" title=" " alt="" coords="409,80,471,107"/>
+<area shape="rect" id="node7" title=" " alt="" coords="495,80,598,107"/>
 </map>

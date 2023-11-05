@@ -1,16 +1,26 @@
 \hypertarget{producer_8hpp}{}\doxysection{include/producer.hpp File Reference}
 \label{producer_8hpp}\index{include/producer.hpp@{include/producer.hpp}}
+
+
+The producer header for the producer/consumer problem.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
 {\ttfamily \#include $<$pthread.\+h$>$}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
-{\ttfamily \#include $<$unistd.\+h$>$}\newline
-Include dependency graph for producer.\+hpp\+:\nopagebreak
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/mman.\+h$>$}\newline
+Include dependency graph for producer.\+hpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=296pt]{producer_8hpp__incl}
+\includegraphics[width=350pt]{producer_8hpp__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,65 +30,17 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{producer_8hpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
-\begin{DoxyCompactList}\small\item\em Main function, driving the consumer. \end{DoxyCompactList}\item 
-void $\ast$ \mbox{\hyperlink{producer_8hpp_aa3b137ad30d10026b76b38f2a5378bbf}{producer}} (void $\ast$)
-\begin{DoxyCompactList}\small\item\em Function for thread to run as a producer into the shared memory buffer with semaphores. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{producer_8hpp_ad5c6b41eba5f719bb7801c662b4809cf}\label{producer_8hpp_ad5c6b41eba5f719bb7801c662b4809cf}} 
+int {\bfseries main} (int, char $\ast$)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Producer in the producer/consumer problem, implemented with threading and shared buffer ~\newline
-
+The producer header for the producer/consumer problem. 
 
 \begin{DoxyAuthor}{Author}
 Elliott Hager 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Date}
-10/24/2023 
+2023-\/11-\/05 
 \end{DoxyDate}
-
-
-\doxysubsection{Function Documentation}
-\mbox{\Hypertarget{producer_8hpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{producer_8hpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
-\index{producer.hpp@{producer.hpp}!main@{main}}
-\index{main@{main}!producer.hpp@{producer.hpp}}
-\doxysubsubsection{\texorpdfstring{main()}{main()}}
-{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Main function, driving the consumer. 
-
-\begin{DoxyReturn}{Returns}
-int
-\end{DoxyReturn}
-Main function, driving the consumer.
-
-\begin{DoxyReturn}{Returns}
-int
-
-int
-\end{DoxyReturn}
-Main function, driving the consumer.
-
-\begin{DoxyReturn}{Returns}
-int 
-\end{DoxyReturn}
-\mbox{\Hypertarget{producer_8hpp_aa3b137ad30d10026b76b38f2a5378bbf}\label{producer_8hpp_aa3b137ad30d10026b76b38f2a5378bbf}} 
-\index{producer.hpp@{producer.hpp}!producer@{producer}}
-\index{producer@{producer}!producer.hpp@{producer.hpp}}
-\doxysubsubsection{\texorpdfstring{producer()}{producer()}}
-{\footnotesize\ttfamily void$\ast$ producer (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
-
-
-
-Function for thread to run as a producer into the shared memory buffer with semaphores. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em arg} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-void$\ast$ 
-\end{DoxyReturn}

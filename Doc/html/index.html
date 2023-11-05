@@ -89,14 +89,14 @@ Description (Provided from the assignment instructions)</h3>
 </p>
 <h2><a class="anchor" id="autotoc_md7"></a>
 Implementation</h2>
-<p>Both the producer and consumer have their own processes, with a thread in each created and pointed to a function of the same name (i.e. consumer and producer respectively). With each thread running their own functions, a shared memory buffer with a capactiy to hold two items is shared between the producer and consumer. To help prevent deadlock and other data hazards when it comes to a shared buffer, a semaphore is used to indicate use of the bufffer. The number '1' indicates the buffer is currently in use, while the number '0' indicates the buffer is available for use.s</p>
+<p>Both the producer and consumer have their own processes, with a thread in each created and pointed to a function of the same name (i.e. consumer and producer respectively). With each thread running their own functions, a shared memory buffer with a capacity to hold two items is shared between the producer and consumer. To help prevent deadlock and other data hazards when it comes to a shared buffer, a semaphore is used to indicate use of the buffer. The number '1' indicates the buffer is currently in use, while the number '0' indicates the buffer is available for use.s</p>
 <p><br  />
 <br  />
 </p>
 <h2><a class="anchor" id="autotoc_md8"></a>
 Compilation</h2>
-<p>Both the producer and consumer are seprate files and meant to be seprate processes. There are three options within the make file. The first two being consumer and producer respectively. These compiler the producer and consumer. The last option is clean, which cleans any object (.o) files as well as the compiled program files to be executed.</p>
-<p>Running the consumer and/or producer seprately will not be of benifit as each relies on each other to run concurrently.</p>
+<p>Both the producer and consumer are septate files and meant to be septate processes. There are three options within the make file. The first two being consumer and producer respectively. These compiler the producer and consumer. The last option is clean, which cleans any object (.o) files as well as the compiled program files to be executed.</p>
+<p>Running the consumer and/or producer separately will not be of benefit as each relies on each other to run concurrently.</p>
 <p><br  />
 </p>
 <h3><a class="anchor" id="autotoc_md9"></a>
@@ -106,18 +106,27 @@ Consumer:</h3>
 Producer:</h2>
 <p>The following make command will compile the producer files for execution </p><div class="fragment"><div class="line">make producer</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md11"></a>
+Run:</h2>
+<p>The following make command will compile the producer, consumer, and run both with the shared memory key of shmfile </p><div class="fragment"><div class="line">make run</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md12"></a>
 Clean:</h2>
 <p>The following make command will remove the compiled and executable program files </p><div class="fragment"><div class="line">make clean</div>
 </div><!-- fragment --><p><br  />
 <br  />
 </p>
-<h2><a class="anchor" id="autotoc_md12"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 Run Instructions:</h2>
-<p>To run both of the producer and consumer at the same time, for Linux and Unix systems, the following command is used </p><div class="fragment"><div class="line">./consumer &amp; ./producer</div>
-</div><!-- fragment --><p><br  />
+<p>To run both of the producer and consumer at the same time, for Linux and Unix systems, there are two options.</p>
+<h3><a class="anchor" id="autotoc_md14"></a>
+1.) Manually/Command</h3>
+<div class="fragment"><div class="line">./consumer shmfile &amp; ./producer shmfile</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md15"></a>
+2.) Using Make (Preferred)</h2>
+<p>Using the <code>make run</code> command will compile and run both the producer and consumer. This is the preferred method of compilation and running the project.</p>
+<p><br  />
 <br  />
 </p>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md16"></a>
 Libraries &amp; Tech Stack</h2>
 <ul>
 <li>C++</li>

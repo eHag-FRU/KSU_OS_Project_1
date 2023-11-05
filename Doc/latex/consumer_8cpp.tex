@@ -1,62 +1,56 @@
 \hypertarget{consumer_8cpp}{}\doxysection{src/consumer.cpp File Reference}
 \label{consumer_8cpp}\index{src/consumer.cpp@{src/consumer.cpp}}
+
+
+The consumer in the producer/consumer problem.  
+
+
 {\ttfamily \#include \char`\"{}../include/consumer.\+hpp\char`\"{}}\newline
-Include dependency graph for consumer.\+cpp\+:\nopagebreak
+{\ttfamily \#include \char`\"{}../include/membuff.\+hpp\char`\"{}}\newline
+Include dependency graph for consumer.\+cpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=296pt]{consumer_8cpp__incl}
+\includegraphics[width=350pt]{consumer_8cpp__incl}
 \end{center}
 \end{figure}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{consumer_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
-\begin{DoxyCompactList}\small\item\em Main function, driving the consumer. \end{DoxyCompactList}\item 
-void $\ast$ \mbox{\hyperlink{consumer_8cpp_a33667f1cd889c38ee628a021df3cba40}{consumer}} (void $\ast$arg)
-\begin{DoxyCompactList}\small\item\em Function for consumer thread to use to process and \char`\"{}consume\char`\"{} the data in the shared memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+int \mbox{\hyperlink{consumer_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em The main function for the consumer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Consumer in the producer/consumer problem, implemented with threading and shared buffer
+The consumer in the producer/consumer problem. 
 
 \begin{DoxyAuthor}{Author}
 Elliott Hager 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Date}
-10/24/2023 
+2023-\/11-\/05 
 \end{DoxyDate}
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{consumer_8cpp_a33667f1cd889c38ee628a021df3cba40}\label{consumer_8cpp_a33667f1cd889c38ee628a021df3cba40}} 
-\index{consumer.cpp@{consumer.cpp}!consumer@{consumer}}
-\index{consumer@{consumer}!consumer.cpp@{consumer.cpp}}
-\doxysubsubsection{\texorpdfstring{consumer()}{consumer()}}
-{\footnotesize\ttfamily void$\ast$ consumer (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
-
-
-
-Function for consumer thread to use to process and \char`\"{}consume\char`\"{} the data in the shared memory. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em arg} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-void$\ast$ 
-\end{DoxyReturn}
-\mbox{\Hypertarget{consumer_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{consumer_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\mbox{\Hypertarget{consumer_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{consumer_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
 \index{consumer.cpp@{consumer.cpp}!main@{main}}
 \index{main@{main}!consumer.cpp@{consumer.cpp}}
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
-{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
 
 
-Main function, driving the consumer. 
+The main function for the consumer. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & The number of arguments fed into the program \\
+\hline
+{\em argv} & Array to hold the command line fed arguments, used for the shared memory file name \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int 
+int Exit status of the program 
 \end{DoxyReturn}

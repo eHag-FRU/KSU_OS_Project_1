@@ -18,11 +18,11 @@ producer: ./src/producer.cpp
 	g++ "./src/producer.cpp" -pthread -lrt -o ./out/producer
 
 
-run:
+run: ./src
 	
 	make producer
 	make consumer
-	./out/producer & ./out/consumer
+	./out/producer shmfile & ./out/consumer shmfile
 
 clean:
 	rm -f ./out/consumer

@@ -72,36 +72,45 @@ $(function() {
 <div class="title">producer.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The producer in the producer and consumer problem.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="producer_8hpp_source.html">../include/producer.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="membuff_8hpp_source.html">../include/membuff.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for producer.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="producer_8cpp__incl.png" border="0" usemap="#asrc_2producer_8cpp" alt=""/></div>
 <map name="asrc_2producer_8cpp" id="asrc_2producer_8cpp">
-<area shape="rect" title=" " alt="" coords="90,5,218,32"/>
-<area shape="rect" href="producer_8hpp.html" title=" " alt="" coords="69,80,239,107"/>
-<area shape="rect" title=" " alt="" coords="5,155,89,181"/>
-<area shape="rect" title=" " alt="" coords="114,155,194,181"/>
-<area shape="rect" title=" " alt="" coords="218,155,293,181"/>
+<area shape="rect" title="The producer in the producer and consumer problem." alt="" coords="488,5,616,32"/>
+<area shape="rect" href="producer_8hpp.html" title="The producer header for the producer/consumer problem." alt="" coords="259,80,429,107"/>
+<area shape="rect" href="membuff_8hpp.html" title="The shared memory buffer structure for the producer/consumer probelm." alt="" coords="675,80,847,107"/>
+<area shape="rect" title=" " alt="" coords="5,155,72,181"/>
+<area shape="rect" title=" " alt="" coords="96,155,171,181"/>
+<area shape="rect" title=" " alt="" coords="195,155,279,181"/>
+<area shape="rect" title=" " alt="" coords="304,155,384,181"/>
+<area shape="rect" title=" " alt="" coords="409,155,471,181"/>
+<area shape="rect" title=" " alt="" coords="495,155,598,181"/>
+<area shape="rect" title=" " alt="" coords="622,155,693,181"/>
+<area shape="rect" title=" " alt="" coords="717,155,805,181"/>
+<area shape="rect" title=" " alt="" coords="830,155,909,181"/>
+<area shape="rect" title=" " alt="" coords="933,155,1040,181"/>
 </map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="producer_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
-<tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to drive producer thread.  <a href="producer_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">More...</a><br /></td></tr>
-<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab10e75e0e8afd435834a7fa8b38e2a96"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="producer_8cpp.html#ab10e75e0e8afd435834a7fa8b38e2a96">producer</a> (void *arg)</td></tr>
-<tr class="memdesc:ab10e75e0e8afd435834a7fa8b38e2a96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for thread to run as a producer into the shared memory buffer with semaphores.  <a href="producer_8cpp.html#ab10e75e0e8afd435834a7fa8b38e2a96">More...</a><br /></td></tr>
-<tr class="separator:ab10e75e0e8afd435834a7fa8b38e2a96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="producer_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+<tr class="memdesc:a0ddf1224851353fc92bfbff6f499fa97"><td class="mdescLeft">&#160;</td><td class="mdescRight">The main function for the producer.  <a href="producer_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">More...</a><br /></td></tr>
+<tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Producer in the producer/consumer problem, implemented with threading and shared buffer</p>
+<div class="textblock"><p>The producer in the producer and consumer problem. </p>
 <dl class="section author"><dt>Author</dt><dd>Elliott Hager </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>10/24/2023 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2023-11-05 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+<a id="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ddf1224851353fc92bfbff6f499fa97">&#9670;&nbsp;</a></span>main()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -109,42 +118,32 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int main </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Function to drive producer thread. </p>
-<p>Main function, driving the consumer.</p>
-<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
-
-</div>
-</div>
-<a id="ab10e75e0e8afd435834a7fa8b38e2a96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab10e75e0e8afd435834a7fa8b38e2a96">&#9670;&nbsp;</a></span>producer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">void* producer </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>arg</em></td><td>)</td>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Function for thread to run as a producer into the shared memory buffer with semaphores. </p>
+<p>The main function for the producer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">arg</td><td></td></tr>
+    <tr><td class="paramname">argc</td><td>The number of arguments fed into the program </td></tr>
+    <tr><td class="paramname">argv</td><td>Array to hold the command line fed arguments, used for the shared memory file name </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void* </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>int Exit status of the program </dd></dl>
 
 </div>
 </div>

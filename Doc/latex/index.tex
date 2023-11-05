@@ -14,14 +14,14 @@ The producer generates items and puts items onto the table. The consumer will pi
 ~\newline
 ~\newline
 \hypertarget{index_autotoc_md7}{}\doxysubsection{Implementation}\label{index_autotoc_md7}
-Both the producer and consumer have their own processes, with a thread in each created and pointed to a function of the same name (i.\+e. consumer and producer respectively). With each thread running their own functions, a shared memory buffer with a capactiy to hold two items is shared between the producer and consumer. To help prevent deadlock and other data hazards when it comes to a shared buffer, a semaphore is used to indicate use of the bufffer. The number \textquotesingle{}1\textquotesingle{} indicates the buffer is currently in use, while the number \textquotesingle{}0\textquotesingle{} indicates the buffer is available for use.\+s
+Both the producer and consumer have their own processes, with a thread in each created and pointed to a function of the same name (i.\+e. consumer and producer respectively). With each thread running their own functions, a shared memory buffer with a capacity to hold two items is shared between the producer and consumer. To help prevent deadlock and other data hazards when it comes to a shared buffer, a semaphore is used to indicate use of the buffer. The number \textquotesingle{}1\textquotesingle{} indicates the buffer is currently in use, while the number \textquotesingle{}0\textquotesingle{} indicates the buffer is available for use.\+s
 
 ~\newline
 ~\newline
 \hypertarget{index_autotoc_md8}{}\doxysubsection{Compilation}\label{index_autotoc_md8}
-Both the producer and consumer are seprate files and meant to be seprate processes. There are three options within the make file. The first two being consumer and producer respectively. These compiler the producer and consumer. The last option is clean, which cleans any object (.o) files as well as the compiled program files to be executed.
+Both the producer and consumer are septate files and meant to be septate processes. There are three options within the make file. The first two being consumer and producer respectively. These compiler the producer and consumer. The last option is clean, which cleans any object (.o) files as well as the compiled program files to be executed.
 
-Running the consumer and/or producer seprately will not be of benifit as each relies on each other to run concurrently.
+Running the consumer and/or producer separately will not be of benefit as each relies on each other to run concurrently.
 
 ~\newline
 \hypertarget{index_autotoc_md9}{}\doxysubsubsection{Consumer\+:}\label{index_autotoc_md9}
@@ -36,7 +36,13 @@ The following make command will compile the producer files for execution
 \DoxyCodeLine{make producer}
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md11}{}\doxysubsection{Clean\+:}\label{index_autotoc_md11}
+\hypertarget{index_autotoc_md11}{}\doxysubsection{Run\+:}\label{index_autotoc_md11}
+The following make command will compile the producer, consumer, and run both with the shared memory key of shmfile 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make run}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md12}{}\doxysubsection{Clean\+:}\label{index_autotoc_md12}
 The following make command will remove the compiled and executable program files 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{make clean}
@@ -46,17 +52,19 @@ The following make command will remove the compiled and executable program files
 
 ~\newline
 ~\newline
-\hypertarget{index_autotoc_md12}{}\doxysubsection{Run Instructions\+:}\label{index_autotoc_md12}
-To run both of the producer and consumer at the same time, for Linux and Unix systems, the following command is used 
+\hypertarget{index_autotoc_md13}{}\doxysubsection{Run Instructions\+:}\label{index_autotoc_md13}
+To run both of the producer and consumer at the same time, for Linux and Unix systems, there are two options.\hypertarget{index_autotoc_md14}{}\doxysubsubsection{1.) Manually/\+Command}\label{index_autotoc_md14}
+
 \begin{DoxyCode}{0}
-\DoxyCodeLine{./consumer \& ./producer}
+\DoxyCodeLine{./consumer shmfile \& ./producer shmfile}
 
 \end{DoxyCode}
-
+\hypertarget{index_autotoc_md15}{}\doxysubsection{2.) Using Make (\+Preferred)}\label{index_autotoc_md15}
+Using the {\ttfamily make run} command will compile and run both the producer and consumer. This is the preferred method of compilation and running the project.
 
 ~\newline
 ~\newline
-\hypertarget{index_autotoc_md13}{}\doxysubsection{Libraries \& Tech Stack}\label{index_autotoc_md13}
+\hypertarget{index_autotoc_md16}{}\doxysubsection{Libraries \& Tech Stack}\label{index_autotoc_md16}
 
 \begin{DoxyItemize}
 \item C++

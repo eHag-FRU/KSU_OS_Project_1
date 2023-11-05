@@ -1,15 +1,22 @@
-#include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <pthread.h>
-#include <sys/shm.h>
-#include <sys/ipc.h>
-#include <sys/mman.h>
-#include <fcntl.h>
+/**
+ * @file producer.cpp
+ * @author Elliott Hager
+ * @brief The producer in the producer and consumer problem
+ * @date 2023-11-05
+ * 
+ */
+
+#include "../include/producer.hpp"
 #include "../include/membuff.hpp"
 
 
+/**
+ * @brief The main function for the producer
+ * 
+ * @param argc The number of arguments fed into the program
+ * @param argv Array to hold the command line fed arguments, used for the shared memory file name
+ * @return int Exit status of the program
+ */
 
 int main(int argc, char *argv[]) {
 
