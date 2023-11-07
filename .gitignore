@@ -4,7 +4,8 @@ Doxyfile
 
 
 #Ignored directories
-/.vscode
+.vscode
+Doxyfile
 Doc/html/annotated.html
 Doc/html/bc_s.png
 Doc/html/bdwn.png
