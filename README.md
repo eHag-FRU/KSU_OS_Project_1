@@ -71,6 +71,11 @@ To run both of the producer and consumer at the same time, for Linux and Unix sy
 Using the ```make run``` command will compile and run both the producer and consumer.
 This is the preferred method of compilation and running the project.
 
+<br><br>
+
+### Documentation:
+Please see the ```Doc``` folder for a PDF manual/documentation packet.
+
 
 
 <br><br>
