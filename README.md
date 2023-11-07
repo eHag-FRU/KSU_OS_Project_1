@@ -64,7 +64,7 @@ To run both of the producer and consumer at the same time, for Linux and Unix sy
 
 #### 1.) Manually/Command
 ```
-    ./consumer shmfile & ./producer shmfile
+    ./out/consumer shmfile & ./out/producer shmfile
 ```
 
 ### 2.) Using Make (Preferred)
