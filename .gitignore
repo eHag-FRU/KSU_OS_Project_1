@@ -1,10 +1,11 @@
-#Ignored files
-Doxyfile
-
-
-
 #Ignored directories
 .vscode
+
+
+
+#Ignored files
+out/consumer
+out/producer
 Doxyfile
 Doc/html/annotated.html
 Doc/html/bc_s.png
