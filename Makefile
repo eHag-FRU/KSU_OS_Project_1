@@ -9,6 +9,16 @@
 #
 ####################################################
 
+#Menu
+msg:
+	@echo 'Targets are: '
+	@echo ' producer'
+	@echo ' consumer'
+	@echo ' run'
+	@echo  ' clean'
+
+
+
 
 consumer: ./src/consumer.cpp
 	g++ "./src/consumer.cpp" -pthread -lrt -o ./out/consumer
@@ -22,6 +32,7 @@ run: ./src
 	
 	make producer
 	make consumer
+	clear
 	./out/producer shmfile & ./out/consumer shmfile
 
 clean:

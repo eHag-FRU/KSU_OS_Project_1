@@ -17,6 +17,6 @@
 #include <fcntl.h>
 #include <sys/mman.h>
 
-int main(int, char *);
+int main(int, char **);
 
 #endif
