@@ -1,5 +1,0 @@
-<map id="include/membuff.hpp" name="include/membuff.hpp">
-<area shape="rect" id="node1" title="The shared memory buffer structure for the producer/consumer probelm." alt="" coords="70,5,230,32"/>
-<area shape="rect" id="node2" href="$consumer_8cpp.html" title="The consumer in the producer/consumer problem." alt="" coords="5,80,140,107"/>
-<area shape="rect" id="node3" href="$producer_8cpp.html" title="The producer in the producer and consumer problem." alt="" coords="165,80,293,107"/>
-</map>
